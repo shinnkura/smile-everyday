@@ -6,11 +6,10 @@ import Link from "next/link";
 
 function Topbar() {
   return (
-    <nav className="topbar">
+    <nav className="bg-red-600 fixed top-0 z-30 flex w-full items-center justify-between px-6 py-3 ">
       <Link href="/" className="flex items-center gap-4">
-        <Image src="/assets/logo.png" alt="logo" width={28} height={28} />
         <p className="text-heading3-bold text-light-1 max-xs:hidden">
-          MokuMoku
+          TreatMent APP
         </p>
       </Link>
 
@@ -19,12 +18,12 @@ function Topbar() {
           <SignedIn>
             <SignOutButton>
               <div className="flex cursor-pointer">
-                <Image
+                {/* <Image
                   src="/assets/logout.png"
                   alt="logout"
                   width={24}
                   height={24}
-                />
+                /> */}
               </div>
             </SignOutButton>
           </SignedIn>

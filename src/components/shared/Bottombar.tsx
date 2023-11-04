@@ -10,7 +10,7 @@ function Bottombar() {
   const pathname = usePathname();
 
   return (
-    <section className="bottombar">
+    <section className="fixed bottom-0 z-10 w-full rounded-t-3xl bg-glassmorphism p-4 backdrop-blur-lg xs:px-7 md:hidden">
       <div className="bottombar_container">
         {sidebarLinks.map((link) => {
           const isActive =
@@ -23,13 +23,13 @@ function Bottombar() {
               key={link.label}
               className={`bottombar_link ${isActive && "bg-primary-500"}`}
             >
-              <Image
+              {/* <Image
                 src={link.imgURL}
                 alt={link.label}
                 width={16}
                 height={16}
                 className="object-contain"
-              />
+              /> */}
 
               <p className="text-subtle-medium text-light-1 max-sm:hidden">
                 {link.label.split(/\s+/)[0]}

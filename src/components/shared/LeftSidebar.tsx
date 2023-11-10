@@ -22,14 +22,16 @@ function LeftSidebar() {
             <Link
               href={link.route}
               key={link.label}
-              className={`leftsidebar_link ${isActive && "bg-primary-500 "}`}
+              className={`leftsidebar_link ${
+                isActive && "bg-primary-500 "
+              } flex items-center gap-4 p-4 rounded-md`}
             >
-              {/* <Image
+              <Image
                 src={link.imgURL}
                 alt={link.label}
                 width={24}
                 height={24}
-              /> */}
+              />
               <p className="text-light-1 max-lg:hidden">{link.label}</p>
             </Link>
           );
@@ -40,13 +42,12 @@ function LeftSidebar() {
         <SignedIn>
           <SignOutButton signOutCallback={() => router.push("/sign-in")}>
             <div className="flex cursor-pointer gap-4 p-4">
-              {/* <Image
-                src="/assets/logout.png"
+              <Image
+                src="/assets/logout.svg"
                 alt="logout"
                 width={24}
                 height={24}
-              /> */}
-
+              />
               <p className="text-light-2 max-lg:hidden">Logout</p>
             </div>
           </SignOutButton>

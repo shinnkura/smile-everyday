@@ -6,10 +6,18 @@ import Link from "next/link";
 
 function Topbar() {
   return (
-    <nav className="bg-red-600 fixed top-0 z-30 flex w-full items-center justify-between px-6 py-3 ">
+    <nav className="fixed top-0 z-30 flex w-full items-center justify-between px-6 py-3 ">
       <Link href="/" className="flex items-center gap-4">
+        {/* TODO ロゴ画像をSVGに直す */}
+        <Image
+          src="/assets/logo.png"
+          alt="logo"
+          width={50}
+          height={50}
+          className="rounded-full"
+        />
         <p className="text-heading3-bold text-light-1 max-xs:hidden">
-          TreatMent APP
+          SimpleBooking
         </p>
       </Link>
 
@@ -18,12 +26,12 @@ function Topbar() {
           <SignedIn>
             <SignOutButton>
               <div className="flex cursor-pointer">
-                {/* <Image
-                  src="/assets/logout.png"
+                <Image
+                  src="/assets/logout.svg"
                   alt="logout"
                   width={24}
                   height={24}
-                /> */}
+                />
               </div>
             </SignOutButton>
           </SignedIn>

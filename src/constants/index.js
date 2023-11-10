@@ -1,44 +1,28 @@
 export const sidebarLinks = [
   {
-    imgURL: "/assets/home.png",
+    imgURL: "/assets/home.svg",
     route: "/",
     label: "Home",
   },
   {
-    imgURL: "/assets/search.png",
-    route: "/search",
-    label: "Search",
+    // imgURL: "/assets/treatment.svg",
+    imgURL: "/assets/treatment.png",
+    route: "/treatment",
+    label: "Treatment",
   },
   {
-    imgURL: "/assets/heart.png",
-    route: "/activity",
-    label: "Activity",
+    imgURL: "/assets/coffee.svg",
+    route: "/coffee",
+    label: "Coffee",
   },
   {
-    imgURL: "/assets/create.png",
-    route: "/create-thread",
-    label: "Create Thread",
+    imgURL: "/assets/officeSeat.svg",
+    route: "/officeSeat",
+    label: "Seats",
   },
   {
-    imgURL: "/assets/community.png",
-    route: "/communities",
-    label: "Communities",
+    imgURL: "/assets/game.png",
+    route: "/game",
+    label: "Game",
   },
-  {
-    imgURL: "/assets/user.png",
-    route: "/profile",
-    label: "Profile",
-  },
-];
-
-export const profileTabs = [
-  { value: "threads", label: "Threads", icon: "/assets/reply.png" },
-  { value: "replies", label: "Replies", icon: "/assets/members.png" },
-  { value: "tagged", label: "Tagged", icon: "/assets/tag.png" },
-];
-
-export const communityTabs = [
-  { value: "threads", label: "Threads", icon: "/assets/reply.png" },
-  { value: "members", label: "Members", icon: "/assets/members.png" },
-  { value: "requests", label: "Requests", icon: "/assets/request.png" },
 ];

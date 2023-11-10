@@ -23,14 +23,13 @@ function Bottombar() {
               key={link.label}
               className={`bottombar_link ${isActive && "bg-primary-500"}`}
             >
-              {/* <Image
+              <Image
                 src={link.imgURL}
                 alt={link.label}
                 width={16}
                 height={16}
                 className="object-contain"
-              /> */}
-
+              />
               <p className="text-subtle-medium text-light-1 max-sm:hidden">
                 {link.label.split(/\s+/)[0]}
               </p>

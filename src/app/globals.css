@@ -7,3 +7,23 @@ body {
   background-color: #e0e2e9;
   color: #0d1432;
 }
+
+@layer components {
+  .leftsidebar {
+    @apply sticky 
+    top-0 
+    z-20 
+    flex 
+    h-screen 
+    w-fit 
+    flex-col 
+    justify-between 
+    overflow-auto
+    border-r 
+    border-black 
+    pb-5 
+    pt-28;
+    left: 35px; /* 単位を追加 */
+    @apply max-md:hidden; /* @applyを使用する場合は、Tailwindのクラス名のみを含める */
+  }
+}

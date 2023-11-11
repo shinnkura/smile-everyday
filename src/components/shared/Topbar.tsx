@@ -17,7 +17,7 @@ function Topbar() {
           className="rounded-full"
         />
         <p className="text-heading3-bold text-light-1 max-xs:hidden">
-          SimpleBooking
+          SmileEveryday
         </p>
       </Link>
 

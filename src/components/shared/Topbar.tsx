@@ -8,7 +8,6 @@ function Topbar() {
   return (
     <nav className="topbar">
       <Link href="/" className="flex items-center gap-4">
-        {/* TODO ロゴ画像をSVGに直す */}
         <Image
           src="/assets/logo.svg"
           alt="logo"

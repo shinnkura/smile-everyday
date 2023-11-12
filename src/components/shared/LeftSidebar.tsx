@@ -22,9 +22,14 @@ function LeftSidebar() {
             <Link
               href={link.route}
               key={link.label}
-              className={`leftsidebar_link ${
-                isActive && "bg-primary-500 "
-              } flex items-center gap-4 p-4 rounded-md`}
+              className={`
+                leftsidebar_link
+                ${isActive && "bg-primary-500 "}
+                flex
+                items-center
+                gap-4 p-4
+                rounded-md
+              `}
             >
               <Image
                 src={link.imgURL}
@@ -32,7 +37,7 @@ function LeftSidebar() {
                 width={24}
                 height={24}
               />
-              <p className="text-light-1 max-lg:hidden">{link.label}</p>
+              <p className="text-dark-1 max-lg:hidden">{link.label}</p>
             </Link>
           );
         })}

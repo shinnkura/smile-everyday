@@ -3,28 +3,55 @@
 @tailwind utilities;
 
 /* 全体の背景色 */
-body {
+/* body {
   background-color: #e0e2e9;
   color: #0d1432;
-}
+} */
 
 @layer components {
+  .main-container {
+    @apply flex
+    min-h-screen
+    flex-1
+    flex-col
+    items-center
+    bg-light-1
+    px-6 pb-10 pt-28
+    max-md:pb-32
+    sm:px-10;
+  }
+
+  /* Head Text */
+  .head-text {
+    @apply text-heading2-bold text-dark-1;
+  }
+
+  .topbar {
+    @apply fixed
+    top-0
+    z-30
+    flex
+    w-full
+    items-center
+    justify-between
+    bg-light-2
+    px-6 py-3;
+  }
+
   .leftsidebar {
     @apply sticky
-    top-0
-    z-20
+    left-0
+    top-0 z-20
     flex
     h-screen
     w-fit
     flex-col
     justify-between
     overflow-auto
-    border-r
-    border-black
-    pb-5
-    pt-28;
-    left: 35px; /* 単位を追加 */
-    @apply max-md:hidden; /* @applyを使用する場合は、Tailwindのクラス名のみを含める */
+    border-r-light-4
+    bg-light-2
+    pb-5 pt-28
+    max-md:hidden;
   }
 
   .rightsidebar {
@@ -39,9 +66,9 @@ body {
     justify-between
     gap-12
     overflow-auto
-    border-l
-    /* border-l-dark-4 */
-    /* bg-dark-2 */
+    /* border-l */
+    border-l-light-4
+    bg-light-2
     px-10
     pb-6
     pt-28

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function Topbar() {
   return (
-    <nav className="fixed top-0 z-30 flex w-full items-center justify-between px-6 py-3 ">
+    <nav className="topbar">
       <Link href="/" className="flex items-center gap-4">
         {/* TODO ロゴ画像をSVGに直す */}
         <Image
@@ -16,7 +16,7 @@ function Topbar() {
           height={50}
           className="rounded-full"
         />
-        <p className="text-heading3-bold text-light-1 max-xs:hidden">
+        <p className="text-heading3-bold text-dark-1 max-xs:hidden">
           SmileEveryday
         </p>
       </Link>

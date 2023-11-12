@@ -10,7 +10,7 @@ function Topbar() {
       <Link href="/" className="flex items-center gap-4">
         {/* TODO ロゴ画像をSVGに直す */}
         <Image
-          src="/assets/logo.png"
+          src="/assets/logo.svg"
           alt="logo"
           width={50}
           height={50}

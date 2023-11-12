@@ -17,7 +17,7 @@ function Bottombar() {
                z-10
                w-full
                rounded-t-3xl
-               bg-glassmorphism
+             bg-light-2
                p-4
                backdrop-blur-lg
                xs:px-7
@@ -43,7 +43,7 @@ function Bottombar() {
                 height={16}
                 className="object-contain"
               />
-              <p className="text-subtle-medium text-light-1 max-sm:hidden">
+              <p className="text-subtle-medium text-dark-1 max-sm:hidden">
                 {link.label.split(/\s+/)[0]}
               </p>
             </Link>

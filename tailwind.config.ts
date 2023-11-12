@@ -170,7 +170,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        "primary-500": "#877EFF",
+        // "primary-500": "#877EFF",
+        "primary-500": "#ffc69e",
         "secondary-500": "#FFB620",
         blue: "#0095F6",
         "logout-btn": "#FF5A5A",
@@ -193,16 +194,16 @@ const config: Config = {
       screens: {
         xs: "400px",
       },
-      // keyframes: {
-      //   "accordion-down": {
-      //     from: { height: 0 },
-      //     to: { height: "var(--radix-accordion-content-height)" },
-      //   },
-      //   "accordion-up": {
-      //     from: { height: "var(--radix-accordion-content-height)" },
-      //     to: { height: 0 },
-      //   },
-      // },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

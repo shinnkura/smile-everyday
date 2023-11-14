@@ -1,7 +1,7 @@
 // TODO: 保育、栄養士、エンジニアなどで、席のカラーを決める
 // TODO: 人の名前で検索できるようにする
 
-import EditableBox from "./components/EditableBox";
+import EditableBox from "./components/editableBox/EditableBox";
 import SeatChart from "./components/SeatChart";
 
 const page = () => {

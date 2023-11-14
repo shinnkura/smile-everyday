@@ -1,5 +1,5 @@
 interface SectionProps {
-  color: "red" | "green" | "blue" | "gray";
+  color: string;
   rows: number;
   cols: number;
   sectionName: string;

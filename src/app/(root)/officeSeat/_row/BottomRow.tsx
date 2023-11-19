@@ -7,7 +7,8 @@ const BottomRow = () => {
       <div className="bg-gray-200">集中ブース</div>
       <div className="flex flex-col gap-2">
         <SeatGrid color="red" rows={3} cols={2} />
-        <div className="bg-red-400 py-2">左中央中央 1x1</div>
+        {/* <div className="bg-red-400 py-2">左中央中央 1x1</div> */}
+        <SeatGrid color="red" rows={1} cols={1} />
         <SeatGrid color="red" rows={2} cols={2} />
       </div>
       <div className="flex flex-col gap-2">

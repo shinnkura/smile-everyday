@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect } from "react";
 const EditableBox = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [text, setText] = useState("");
-  const inputRef = useRef<HTMLInputElement>(null); // 明示的な型指定
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (isEditing && inputRef.current) {
@@ -28,10 +28,7 @@ const EditableBox = () => {
   };
 
   return (
-    <div
-      className="border border-gray-300 bg-white p-2 cursor-text"
-      onClick={handleBoxClick}
-    >
+    <div className="bg-white p-3 cursor-text" onClick={handleBoxClick}>
       {isEditing ? (
         <input
           ref={inputRef}
@@ -39,10 +36,10 @@ const EditableBox = () => {
           value={text}
           onChange={handleInputChange}
           onBlur={handleInputBlur}
-          className="outline-none w-full"
+          className="outline-none w-8"
         />
       ) : (
-        <div>{text || "クリックしてテキストを入力"}</div>
+        <div>{text || "　　"}</div>
       )}
     </div>
   );

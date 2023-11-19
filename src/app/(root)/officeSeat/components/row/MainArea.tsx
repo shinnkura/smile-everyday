@@ -2,7 +2,7 @@ import SeatGrid from "../seat/SeatGrid";
 
 const MainArea = () => (
   <div className="grid grid-cols-[6fr_7fr_1fr] gap-4 text-center">
-    <div className="flex flex-col gap-2 mb-8">
+    <div className="flex flex-col gap-6 mb-8">
       <SeatGrid color="red" rows={2} cols={3} />
       <SeatGrid color="red" rows={2} cols={3} />
     </div>

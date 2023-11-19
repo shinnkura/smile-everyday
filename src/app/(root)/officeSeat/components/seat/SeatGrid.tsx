@@ -1,4 +1,5 @@
 import React from "react";
+import EditableBox from "../editableBox/EditableBox";
 
 interface SeatGridProps {
   rows: number;
@@ -11,10 +12,11 @@ const SeatGrid: React.FC<SeatGridProps> = ({ rows, cols, color }) => {
   const renderSeats = (rowIndex: number) =>
     Array.from({ length: cols }, (_, colIndex) => (
       <div
-        className={`border-2 border-gray-300 bg-${color}-300 p-4 m-2`}
+        className={`border-2 border-gray-300 bg-${color}-300 p-2 m-1`}
         key={rowIndex}
       >
-        座席 {rowIndex * cols + colIndex + 1}
+        {/* 座席 {rowIndex * cols + colIndex + 1} */}
+        <EditableBox />
       </div>
     ));
 

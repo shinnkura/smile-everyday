@@ -1,9 +1,9 @@
 // TODO: 保育、栄養士、エンジニアなどで、席のカラーを決める
 // TODO: 人の名前で検索できるようにする
 
-import BottomRow from "./components/BottomRow";
-import MainRow from "./components/MainRow";
-import TopRow from "./components/TopRow";
+import BottomRow from "./_row/BottomRow";
+import MainRow from "./_row/MainRow";
+import TopRow from "./_row/TopRow";
 
 const page = () => {
   return (

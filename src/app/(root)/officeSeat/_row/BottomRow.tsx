@@ -1,5 +1,5 @@
 import React from "react";
-import SeatGrid from "./SeatGrid";
+import SeatGrid from "./components/SeatGrid";
 
 const BottomRow = () => {
   return (

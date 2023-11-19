@@ -173,6 +173,7 @@ const config: Config = {
         // "primary-500": "#877EFF",
         "primary-500": "#ffc69e",
         "secondary-500": "#FFB620",
+        // yello: "#FFB620",
         blue: "#0095F6",
         "logout-btn": "#FF5A5A",
         "navbar-menu": "rgba(16, 16, 18, 0.6)",

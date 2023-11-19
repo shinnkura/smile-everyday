@@ -1,4 +1,4 @@
-import SeatGrid from "../seat/SeatGrid";
+import SeatGrid from "./SeatGrid";
 
 const MainArea = () => (
   <div className="grid grid-cols-[6fr_7fr_1fr] gap-4 text-center">

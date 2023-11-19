@@ -12,7 +12,7 @@ const SeatChart = () => {
       <Header />
       <TopRow />
       <MainArea />
-      <SeatGrid rows={2} cols={3} />
+      <SeatGrid rows={2} cols={3} color={"red"} />
       <BottomRow />
       <Footer />
     </div>

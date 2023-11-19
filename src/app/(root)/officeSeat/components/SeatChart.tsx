@@ -4,6 +4,7 @@ import TopRow from "./row/TopRow";
 import MainArea from "./row/MainArea";
 import Footer from "./text/Footer";
 import BottomRow from "./row/BottomRow";
+import SeatGrid from "./SeatGrid";
 
 const SeatChart = () => {
   return (
@@ -11,6 +12,7 @@ const SeatChart = () => {
       <Header />
       <TopRow />
       <MainArea />
+      <SeatGrid rows={2} cols={3} />
       <BottomRow />
       <Footer />
     </div>

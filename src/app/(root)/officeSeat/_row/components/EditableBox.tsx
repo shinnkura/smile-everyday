@@ -3,9 +3,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { getColorClass } from "../util/colorUtils";
 import { firestore } from "../../../../../../firebaseConfig";
-import { collection, doc, onSnapshot, setDoc } from "firebase/firestore";
+import { doc, onSnapshot, setDoc } from "firebase/firestore";
 
 interface EditableBoxProps {
+  id: string;
   color: string;
 }
 
@@ -17,7 +18,7 @@ const useDynamicFontSize = (text: string) => {
   return calculatedSize + "px";
 };
 
-const EditableBox: React.FC<EditableBoxProps> = ({ color }) => {
+const EditableBox: React.FC<EditableBoxProps> = ({ id, color }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [text, setText] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
@@ -25,8 +26,7 @@ const EditableBox: React.FC<EditableBoxProps> = ({ color }) => {
 
   useEffect(() => {
     // Firestoreからのテキスト更新を監視
-    const boxesCollection = collection(firestore, "boxes");
-    const boxDoc = doc(boxesCollection, color);
+    const boxDoc = doc(firestore, "boxes", id); // IDを使用
     const unsubscribe = onSnapshot(boxDoc, (docSnapshot) => {
       const data = docSnapshot.data();
       if (data) {
@@ -35,7 +35,7 @@ const EditableBox: React.FC<EditableBoxProps> = ({ color }) => {
     });
 
     return () => unsubscribe();
-  }, [color]);
+  }, [id]); // IDを依存配列に追加
 
   useEffect(() => {
     if (isEditing && inputRef.current) {
@@ -45,10 +45,8 @@ const EditableBox: React.FC<EditableBoxProps> = ({ color }) => {
 
   // Firestoreにテキストを保存する関数
   const saveText = async (newText: string) => {
-    // String -> string
     try {
-      const boxesCollection = collection(firestore, "boxes");
-      const boxDoc = doc(boxesCollection, color);
+      const boxDoc = doc(firestore, "boxes", id); // IDを使用
       await setDoc(boxDoc, { text: newText });
     } catch (error) {
       console.error("Error saving text to Firestore: ", error);

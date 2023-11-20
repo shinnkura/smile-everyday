@@ -3,22 +3,24 @@ import EditableBox from "./EditableBox";
 import { getColorClass } from "../util/colorUtils";
 
 interface SeatGridProps {
+  gridId: string;
   rows: number;
   cols: number;
   color: string;
 }
 
-const SeatGrid: React.FC<SeatGridProps> = ({ rows, cols, color }) => {
-  // 座席を生成する関数
+const SeatGrid: React.FC<SeatGridProps> = ({ gridId, rows, cols, color }) => {
+  // 各座席にユニークなIDを割り当てる
   const renderSeats = (rowIndex: number) =>
-    Array.from({ length: cols }, (_, colIndex) => (
-      <div
-        className={`${getColorClass(color)} p-2 m-1`}
-        key={`${rowIndex}-${colIndex}`}
-      >
-        <EditableBox color={color} />
-      </div>
-    ));
+    Array.from({ length: cols }, (_, colIndex) => {
+      const uniqueId = `seat-${gridId}-${rowIndex}-${colIndex}`;
+
+      return (
+        <div className={`${getColorClass(color)} p-2 m-1`} key={uniqueId}>
+          <EditableBox color={color} id={uniqueId} />
+        </div>
+      );
+    });
 
   // 行を生成する関数
   const renderRows = () =>

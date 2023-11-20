@@ -16,7 +16,7 @@ const SeatGrid: React.FC<SeatGridProps> = ({ rows, cols, color }) => {
         className={`${getColorClass(color)} p-2 m-1`}
         key={`${rowIndex}-${colIndex}`}
       >
-        <EditableBox color={`${getColorClass(color)}`} />
+        <EditableBox color={color} />
       </div>
     ));
 

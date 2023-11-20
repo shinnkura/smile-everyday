@@ -7,10 +7,19 @@ interface EditableBoxProps {
   color: string;
 }
 
+const useDynamicFontSize = (text: string) => {
+  const baseSize = 16;
+  const minFontSize = 10;
+  const calculatedSize = Math.max(baseSize - text.length, minFontSize);
+
+  return calculatedSize + "px";
+};
+
 const EditableBox: React.FC<EditableBoxProps> = ({ color }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [text, setText] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const fontSize = useDynamicFontSize(text);
 
   useEffect(() => {
     if (isEditing && inputRef.current) {
@@ -18,31 +27,23 @@ const EditableBox: React.FC<EditableBoxProps> = ({ color }) => {
     }
   }, [isEditing]);
 
-  const handleBoxClick = () => {
-    setIsEditing(true);
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setText(e.target.value);
-  };
-
-  const handleInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-    setIsEditing(false);
-  };
-
   return (
-    <div className={`bg-${color} p-1 cursor-text`} onClick={handleBoxClick}>
+    <div
+      className={`editable-box ${getColorClass(color)} p-1 cursor-text w-16`}
+      onClick={() => setIsEditing(true)}
+      style={{ fontSize }}
+    >
       {isEditing ? (
         <input
           ref={inputRef}
           type="text"
           value={text}
-          onChange={handleInputChange}
-          onBlur={handleInputBlur}
-          className={`outline-none w-8 ${getColorClass(color)}`}
+          onChange={(e) => setText(e.target.value)}
+          onBlur={() => setIsEditing(false)}
+          className={`text-input outline-none w-14 ${getColorClass(color)}`}
         />
       ) : (
-        <div>{text || "　　　　"}</div>
+        <div className={`text-display`}>{text || "　　　　"}</div>
       )}
     </div>
   );
